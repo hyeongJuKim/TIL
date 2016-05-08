@@ -161,7 +161,7 @@ Changes to be committed:
 ## 변경하상 커밋하기
 `git status`로 상태를 확인 후 커밋하자.
 ```
-$ git commit -v "connents"
+$ git commit -m "connents"
 ```
 
 ## 파일 삭제하기
