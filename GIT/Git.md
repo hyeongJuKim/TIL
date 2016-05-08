@@ -169,10 +169,7 @@ $ git commit
 
 ## 파일 삭제하기
 
-
 ## 파일 이름 변경하기
-
-
 
 ## 사용자 정보 설정 
  `command` + `,`키를 누른 후 fullName 과 Email Address를 설정하면 모든 저장소에 설정이 된다. 
