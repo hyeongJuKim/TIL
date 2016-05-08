@@ -24,6 +24,8 @@
 `git status`  : 상태 확인하기
 `git status -s`  : 간단하게 상태 확인하기
 `git diff` : 수정했지만 아직 staged상태가 아닌 파일을 비교한다.
+`git remote` : 리모트 저장소 확인하기.
+
 ## git 가이드
 > GIT을 사용해보고 간단하게 정리.
 
@@ -171,7 +173,16 @@ $ git commit -v "connents"
 
 ## 파일 이름 변경하기
 
-## 커밋 후 push하기
+## Remote 저장소
+인터넷이나 네트워크에 존재하는 저장소.  
+
+`git remote` : 리모트 저장소 확인하기. 
+`git remote -v` : 리모트 저장소 확인하기. (URL)
+`git remote rename {변경할 이름} {변경될 이름}` : 리모트 저장소 이름 변경.  
+`git remote rm {remoteName}` : 리모트 저장소 삭제.  
+
+
+## 커밋 후 remote저장소에 push하기
 커밋이 완료되면 push를 해보자.
 ```
 $ git push
