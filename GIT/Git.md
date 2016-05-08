@@ -11,10 +11,6 @@
 
 **브랜치(Branch):**
 
-## 목차
-- 회원가입
-- 저장소 생성
-
 ## 자주쓰는 명령어
 `git help config` : 도움말.  
 `git init` : 디렉토리를 로컬저장소로 초기화한다.  
@@ -29,14 +25,11 @@
 ## git 가이드
 > GIT을 사용해보고 간단하게 정리.
 
-
-## git이란?
-
+## git이란?  
 > 프로그램의 소스코드 관리를 위한 **분산관리시스템**이며, 빠른 수행 속도가 장점이다.  
 최초에는 리누스 토르발스가 리눅스 커널 개발에 이용하려고 개발하였으며, 현재는 다른 곳에도 널리 사용되고 있다.  
 > 깃의 작업 폴더는 모두, 전체 기록과 각 기록을 추적할 수 있는 정보를 포함하고 있으며, 완전한 형태의 저장소이다.  
 > 네트워크에 접근하거나 중앙 서버에 의존하지 않는다.  
-
 
 ## Git파일의 세 가지 상태
 Git파일은 Committed, Modified, Staged의 세 가지 상태로 관리한다.  
@@ -81,6 +74,8 @@ $ git config --global user.email "gudwndhkd@nate.com"
 
 ## 회원가입
 [https://github.com](https://github.com) 에서 회원가입 후 로그인 한다.
+
+---
 
 ## Git 저장소 만들기
 
@@ -186,6 +181,12 @@ $ git commit -v "connents"
 ```
 $ git push
 ```
+또는
+```
+$ git push {RemoteRepoName} master
+```
+
+
 
 
 ## 사용자 정보 설정 
