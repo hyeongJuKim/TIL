@@ -164,12 +164,19 @@ Changes to be committed:
 ## 변경하상 커밋하기
 `git status`로 상태를 확인 후 커밋하자.
 ```
-$ git commit
+$ git commit -v "connents"
 ```
 
 ## 파일 삭제하기
 
 ## 파일 이름 변경하기
+
+## 커밋 후 push하기
+커밋이 완료되면 push를 해보자.
+```
+$ git push
+```
+
 
 ## 사용자 정보 설정 
  `command` + `,`키를 누른 후 fullName 과 Email Address를 설정하면 모든 저장소에 설정이 된다. 
