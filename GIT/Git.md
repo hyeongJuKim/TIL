@@ -195,4 +195,3 @@ $ git push {RemoteRepoName} master
     $ git config --global user.email {gudwndhkd@nate.com}
                 --global을 생략하면 현재 저장소에만 적용된다.
 
- 
