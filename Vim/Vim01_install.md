@@ -9,14 +9,10 @@ Vim은 windows, Linux, MacOS 등 여러 환경에서 사용 가능하다.
 ```
 $ sudo apt-get install vim
 ``` 
-  
-  
 설치가 완료되면 설정을 해봅시다.
 ```
 $ vi ~/vimrc
 ```
-  
-
 처음에는 아무 내용도 없다.  
 필요에 따라 아래 설정을 하면 됩니다.
 ```
@@ -44,3 +40,6 @@ set wmnu           " tab 자동완성시 가능한 목록을 보여줌
 syntax on        " 문법 하이라이트 킴"
 ```
  " 쌍따옴표는 주석을 의미한다
+  
+아래의 링크에서 단축키들을 볼 수 있습니다.  
+[Vim단축키 정리](http://mintnlatte.tistory.com/170)
