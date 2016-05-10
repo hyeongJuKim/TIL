@@ -5,15 +5,16 @@ Vim은 Vi와 호환되는 텍스트 에디터이다.
 Vim은 windows, Linux, MacOS 등 여러 환경에서 사용 가능하다. 
 
 ## Vim install
-우선 vim을 설치한다.
+우선 vim을 설치합니다.
 ```
 $ sudo apt-get install vim
 ``` 
-
-설치가 완료되면 설정을 해보자.
+  
+설치가 완료되면 설정을 해봅시다.
 ```
 $ vi ~/vimrc
 ```
+  
 처음에는 아무 내용도 없다.  
 필요에 따라 아래 설정을 하면 됩니다.
 ```
