@@ -174,6 +174,7 @@ $ git commit -m "connents"
 `git remote` : 리모트 저장소 확인하기.  
 `git remote -v` : 리모트 저장소 확인하기.(URL)  
 `git remote rename {변경할 이름} {변경될 이름}` : 리모트 저장소 이름 변경.  
+`git remote mv {변경할 이름} {변경될 이름}` : 디렉토리 변경.  
 `git remote rm {remoteName}` : 리모트 저장소 삭제.  
 
 ## 커밋 후 remote저장소에 push하기
