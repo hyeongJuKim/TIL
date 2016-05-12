@@ -16,11 +16,11 @@
 `git init` : 디렉토리를 로컬저장소로 초기화한다.  
 `git --global core.editor` : 어떤 편집기를 사용할지 설정한다.  
 `git confing --list` : 설정한 정보들을 보여준다.  
-`git config {key}` : key에 대한 값을 확인 할 수 있다. 
-`git status`  : 상태 확인하기
-`git status -s`  : 간단하게 상태 확인하기
-`git diff` : 수정했지만 아직 staged상태가 아닌 파일을 비교한다.
-`git remote` : 리모트 저장소 확인하기.
+`git config {key}` : key에 대한 값을 확인 할 수 있다.  
+`git status`  : 상태 확인하기  
+`git status -s`  : 간단하게 상태 확인하기  
+`git diff` : 수정했지만 아직 staged상태가 아닌 파일을 비교한다.  
+`git remote` : 리모트 저장소 확인하기.  
 
 ## git 가이드
 > GIT을 사용해보고 간단하게 정리.

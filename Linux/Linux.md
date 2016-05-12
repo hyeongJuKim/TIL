@@ -38,11 +38,17 @@ chdown -R {계정}:{계정} {directoryPath}     root권한 폴더를 내 계정 
 history     사용햔 명령어들의 목록을 조회한다.
 clear       콘솔창 clear
 
-ls
 cp          파일 복사
 rm          삭제
 chmod {xxx} {file or Path}
-mkdir       디렉토리 생성
 ```
+
+디렉토리
+```
+ls      파일 목록을 간단히 출력한다.
+ls -al  숨김일까지 포함해서 자세히 출력한다.
+mkdir {direcotryName}       디렉토리를 생성한다.
+```
+
 
 
