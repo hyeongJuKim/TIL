@@ -1,5 +1,11 @@
 # Git
 
+## Git을 공부 할 수 있는 사이트
+[svn능력자를 위한 git개념 가이드](http://www.slideshare.net/einsub/svn-git-17386752)  
+[GIT 간편 안내서](https://rogerdudler.github.io/git-guide/index.ko.html)  
+[book](https://git-scm.com/book/ko/v2)  
+[한글 듀토리얼](http://pcottle.github.io/learnGitBranching/)
+
 ## 기본용어
 **커맨드라인(Commind Line):** 맥의 터미날과 유사.
 
