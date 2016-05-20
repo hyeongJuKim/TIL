@@ -39,7 +39,7 @@ history     사용햔 명령어들의 목록을 조회한다.
 clear       콘솔창 clear
 
 cp {fromFileName} {toFileName}	파일 복사.  
-    -r	  하위 디렉토리까지 복사.  
+    -r	  하위 디렉토리까지 복사.
     -rp   파일의 소유자, 그룹자, 권한, 시간정보등 그대로 복사.  
 
 rm          삭제
