@@ -11,7 +11,7 @@ $ sudo apt-get install vim
 ``` 
 설치가 완료되면 설정을 해봅시다.
 ```
-$ vi ~/vimrc
+$ vi ~/.vimrc
 ```
 처음에는 아무 내용도 없다.  
 필요에 따라 아래 설정을 하면 됩니다.

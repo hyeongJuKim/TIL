@@ -11,20 +11,38 @@ Python을 종료할때는 `exit()` 이라고 입력한다.
 ```
 
 ## Python 첫 번째 프로그램
-예제파일 `ex01.py`  
-  
-프린트하기
+
+프린트하기 `ex01.py`
 ``` Python
 print "text"
 print 'text2'
 print "t'e'xt3"
 print 't"e"xt4'
 ```
-
-주석처리하기
+  
+주석처리하기 `ex02.py`
 ``` Python
 # 이렇게하면 한줄주석
 print "여긴 문자가 출력된다 ! "
 ```
+수와 계산 `ex03.py`
+``` Python
++ 덧셈(plus)
+- 뺄셈(minus)
+* 곱셈(slash)
+/ 나눗셈(asterisk)
+% 나머지(percent) - 연산자와 피연산자를 나누고 난 나머지 값.
+< 작다(less than)
+> 크다(greater than)
+<= 작거나 같다(less than equal)
+>= 크거나 같다(greater than equal)
+```
+
+변수와 이름 `ex04.py`
+```Python
+{변수명} = {값}  # 이렇게 값을 원하는 변수명에 할당하여 사용할 수 있다.
+```
+
+
 
 
