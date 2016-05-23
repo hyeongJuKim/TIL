@@ -48,7 +48,7 @@ print "여긴 문자가 출력된다 ! "
 {변수명} = {값}  # 이렇게 값을 원하는 변수명에 할당하여 사용할 수 있다.
 ```
 
-변수와 출력, 문자열 `ex05.py`,`ex06.py`,`ex07.py` `ex08.py`
+변수와 출력, 문자열 `ex05.py`,`ex06.py`,`ex07.py` `ex08.py`,`ex09.py`,`ex10.py`
 ``` Python
 %s  # 문자열
 %d  # 정수
@@ -107,7 +107,39 @@ print """
 \xhh 16진수 값 hh에 해당하는 문자
 """
 ```
-Python 입력받기
+Python 입력받기 `ex11.py`,`ex12.py`
 ```Python
 raw_input("이 곳에 Prompt를 넣는다.")
 ```
+
+매개변수, 풀기(unpack), 변수 `ex13.py`
+python은 실행 할 때 스크립트에 매개변수를 전할해서 실행 할 수 있다.  
+실행
+```Linux
+$ python ex13.py 첫번째 두번째 세번째
+```
+ex13.py 코드
+
+```Python
+# import: python에서 필요한 모듈을 가져다 씀.
+from sys import argv
+
+# 스크립트를 실행 할 때 전달했던 실행인자가 담겨 있다.
+# 이것을 풀어서 순서대로 변수에 대입한다.
+script , first, second, thrid = argv
+
+print "스크립트 이름:", script
+print"첫 번째 변수", first
+print"두 번째 변수", second
+print"세 번째 변수", thrid
+```
+
+결과
+```
+스크립트 이름: ex13.py
+첫 번째 변수 첫번째
+두 번째 변수 두번째
+세 번째 변수 세번째
+```
+
+
