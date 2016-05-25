@@ -57,7 +57,7 @@ LIKE    포함되는 값
 IN      한 개 이상의 값을 넣을 수 있다.
 ```
 
-## SQL AND & OR Operators
+## AND & OR Operators
 > WHERE절에서 조건이 2개 이상 일 때 사용한다. 
   
 `AND`연산자 : A와 B가 TRUE일 때
@@ -76,10 +76,24 @@ COLUNM_NAME2의 값이 '나'인 DATA를 조회 */
 SELECT  *
 FROM    TABLE_NAME
 WHERE   COLUNM_NAME1 = '가'
-OR      COLUNM_NAME2 =  '나'
+OR      COLUNM_NAME2 = '나'
 ```
 
 
+## ORDER BY
+조회한 DATA를 정렬하는 기준
+
+```SQL
+SELECT
+     COLUNM_NAME1  
+   , COLUNM_NAME2
+FROM
+     TABLE
+ORDER BY
+     COLUNM_NAME1 ASC -- 오름차순 정렬
+AND  COLUNM_NAME2 DESC ; -- 내림차순 정렬
+
+```
 
 
 
