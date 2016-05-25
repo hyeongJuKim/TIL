@@ -26,6 +26,18 @@ SELECT  COLUMN_NAME
 FROM    TABLE_NAME;
 ```
 
+## INSERT INTO Statement
+> 테이블의 한 행 입력
+> 두 가지 형식이 있다
+```SQL
+INSERT INTO TABLE_NAME
+VAlLES (value1,value2,value3,value1,...);
+```
+```SQL
+INSERT INTO TABLE_NAME (COLUMN1,COLUMN2,COLUMN3,...)
+VAULES (value1,value2,value3,value1,...);
+
+```
 ## SELECT DISTINCT
 조회되는 결과 중 중복된 값들을 제거해서 가져온다.
 ```SQL
