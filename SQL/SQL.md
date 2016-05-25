@@ -91,7 +91,7 @@ FROM
      TABLE
 ORDER BY
      COLUNM_NAME1 ASC -- 오름차순 정렬
-AND  COLUNM_NAME2 DESC ; -- 내림차순 정렬
+   , COLUNM_NAME2 DESC ; -- 내림차순 정렬
 
 ```
 
