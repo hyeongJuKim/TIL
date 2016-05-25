@@ -109,6 +109,7 @@ ORDER BY
 ## INSERT INTO Statement
 > 테이블의 한 행 입력
 > 두 가지 형식이 있다
+
 ```SQL
 INSERT INTO TABLE_NAME
 VAlLES (value1,value2,value3,value1,...);
