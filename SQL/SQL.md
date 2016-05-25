@@ -106,7 +106,17 @@ ORDER BY
    , COLUNM_NAME2 DESC ; -- 내림차순 정렬
 
 ```
-
+## INSERT INTO Statement
+> 테이블의 한 행 입력
+> 두 가지 형식이 있다
+```SQL
+INSERT INTO TABLE_NAME
+VAlLES (value1,value2,value3,value1,...);
+```
+```SQL
+INSERT INTO TABLE_NAME (COLUMN1,COLUMN2,COLUMN3,...)
+VAULES (value1,value2,value3,value1,...);
+```
 
 
 
