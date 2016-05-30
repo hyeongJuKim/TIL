@@ -26,6 +26,21 @@ print_two_again("Hi","HJ")
 print_one("First!")
 prnit_none()
 
+
 ```
 
-## 함수와 변수
+## 함수와 변수 `ex19_def.py`, `ex20_def_file.py`
+
+```Python
+# f 파일의 포인터를 i로 이동시킨다.
+f.seek(i)
+
+
+```
+
+
+
+
+
+
+
