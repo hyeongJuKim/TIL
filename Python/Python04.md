@@ -4,7 +4,6 @@
 파이썬에서는 다음 용어를 써서 무엇이 'True'나 'False'인지 결정 한다.  
 컴퓨터에서의 논리란 이 기호화 변수의 결합이 프로그램의 어떤 지점에서 True인지 보는 것이다.  
 
-
 - and
 - or
 - not 
@@ -22,7 +21,7 @@
 ```
 not False -> True  
 not True -> False  
-```    
+```
 
 **OR**  
 ```
@@ -77,12 +76,12 @@ not(Flase or False) -> True
 
 True and True
 False and True
-1==1and2==1
+1==1 and 2==1
 "test" == "test"
-1==1or2!=1
-Trueand1==1
+1==1 or 2!=1
+True and 1==1
 False and 0 != 0
-Trueor1==1
+True or 1==1
 "test" == "testing"
 1 != 0 and 2 == 1
 "test" != "testing"
@@ -96,6 +95,13 @@ not ("testing" == "testing" and "Zed" == "Cool Guy")
 "chunky" == "bacon" and not (3 == 4 or 3 == 3)
 3 != 4 and not (“testing” != “test” or “Python” == “Python”)
 ```
+푸는법
+1. 동등성(equality) 검사(==이나 !=)를 찾하서 해당 진리값으로 바꾼다.  
+2. 괄호 안에 있는 and/or를 찾아 먼저 푼다.  
+3. not을 찾아 뒤집는다.  
+4. 남은 and/or를 찾아 푼다.  
+5. 끄내면 True나 Flase가 나온다.  
+
 ## 실행결과
 
 ## 더 해보기
