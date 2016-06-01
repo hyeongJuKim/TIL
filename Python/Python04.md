@@ -57,7 +57,8 @@ not(Flase or False) -> True
 ```
 
 **!=**     
-```1 != 0 -> True  
+```
+1 != 0 -> True  
 1 != 1 -> False  
 0 != 1 -> True  
 0 != 0 -> False  
@@ -69,9 +70,32 @@ not(Flase or False) -> True
 0 == 1 -> True  
 0 == 0 -> False  
 ```
+
+
 # 28 불린(boolean)연습
+```Python
 
-
+True and True
+False and True
+1==1and2==1
+"test" == "test"
+1==1or2!=1
+Trueand1==1
+False and 0 != 0
+Trueor1==1
+"test" == "testing"
+1 != 0 and 2 == 1
+"test" != "testing"
+"test" == 1
+not (True and False)
+not (1 == 1 and 0 != 1)
+not (10 == 1 or 1000 == 1000)
+not (1 != 10 or 3 == 4)
+not ("testing" == "testing" and "Zed" == "Cool Guy")
+1 == 1 and not ("testing" == 1 or 1 == 0)
+"chunky" == "bacon" and not (3 == 4 or 3 == 3)
+3 != 4 and not (“testing” != “test” or “Python” == “Python”)
+```
 ## 실행결과
 
 ## 더 해보기
