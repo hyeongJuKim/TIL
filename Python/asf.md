@@ -17,10 +17,10 @@
 ## 진리표
 
 **NOT**
-
-    not False -> True  
-    not True -> False  
-
+```
+not False -> True  
+not True -> False  
+```
 
 
 
