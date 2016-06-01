@@ -95,12 +95,14 @@ not ("testing" == "testing" and "Zed" == "Cool Guy")
 "chunky" == "bacon" and not (3 == 4 or 3 == 3)
 3 != 4 and not (“testing” != “test” or “Python” == “Python”)
 ```
-푸는법
+
+푸는법.  
+
 1. 동등성(equality) 검사(==이나 !=)를 찾하서 해당 진리값으로 바꾼다.  
 2. 괄호 안에 있는 and/or를 찾아 먼저 푼다.  
 3. not을 찾아 뒤집는다.  
 4. 남은 and/or를 찾아 푼다.  
-5. 끄내면 True나 Flase가 나온다.  
+5. 끝내면 True나 Flase가 나온다.  
 
 ## 실행결과
 
