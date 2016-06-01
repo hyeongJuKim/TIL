@@ -29,7 +29,7 @@ prnit_none()
 
 ```
 
-## 함수와 변수 `ex19_def.py`, `ex20_def_file.py`
+### 함수와 변수 `ex19_def.py`, `ex20_def_file.py`
 
 ```Python
 # f 파일의 포인터를 i로 이동시킨다.
@@ -38,6 +38,18 @@ f.seek(i)
 
 ```
 
+### 반환하는 함수 `ex21_def_return.py`,`ex21_def_return.py`
+
+htlp 사용하기.  
+python interperter 에서 실행해보자.
+```Python
+$ python
+# .py파일을 import 한 후에 사용
+#  """ """ 이 안에 있는 문서화 주석이 보여진다.
+>>> help(파이썬 파일명)
+
+>>>  help(파이썬 파일명.함수명)
+```
 
 
 
