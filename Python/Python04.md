@@ -104,7 +104,7 @@ not ("testing" == "testing" and "Zed" == "Cool Guy")
 4. 남은 and/or를 찾아 푼다.   
 5. 끝내면 True나 Flase가 나온다.  
 
-# 29. if문 `ex29.py`[ex29.py](ex/ex29.py)
+# 29. if문 `ex29.py`[ex29.py](ex/ex29_if.py)
 이런 문법.  
 ```Python
 if people < cats:
