@@ -29,7 +29,6 @@ if people <= dogs:
 
 if people == dogs:
 	print "사람은 개입니다."
-	
 
 
 
