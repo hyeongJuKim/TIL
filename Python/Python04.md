@@ -71,7 +71,7 @@ not(Flase or False) -> True
 ```
 
 
-# 28 불린(boolean)연습
+# 28. 불린(boolean)연습
 ```Python
 
 True and True
@@ -101,12 +101,19 @@ not ("testing" == "testing" and "Zed" == "Cool Guy")
 1. 동등성(equality) 검사(==이나 !=)를 찾하서 해당 진리값으로 바꾼다.  
 2. 괄호 안에 있는 and/or를 찾아 먼저 푼다.  
 3. not을 찾아 뒤집는다.  
-4. 남은 and/or를 찾아 푼다.  
+4. 남은 and/or를 찾아 푼다.   
 5. 끝내면 True나 Flase가 나온다.  
 
-## 실행결과
+# 29. if문 `ex29.py`[ex29.py](ex/ex29.py)
+이런 문법.  
+```Python
+if people < cats:
+    print "고양이가 너무 많아요! 세상을 멸망합니다!"
+```
 
-## 더 해보기
+# 30. else와 if
 
-## 자주 묻는 질문
+
+
+
 
