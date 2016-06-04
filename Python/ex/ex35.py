@@ -73,7 +73,7 @@ def start():
 	elif next == "오른쪽":
 		cthulhu_room()
 	else:
-		deaf("문 주위에 맴돌기만 하다 굶어 죽었습니다.")
+		dead("문 주위에 맴돌기만 하다 굶어 죽었습니다.")
 
 
 start()
