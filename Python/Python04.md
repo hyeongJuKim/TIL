@@ -104,7 +104,8 @@ not ("testing" == "testing" and "Zed" == "Cool Guy")
 4. 남은 and/or를 찾아 푼다.   
 5. 끝내면 True나 Flase가 나온다.  
 
-# 29. if문 `ex29.py`[ex29.py](ex/ex29_if.py)
+# 29. if문 
+### [ex29.py](ex/ex29_if.py)
 이런 문법.  
 ```Python
 if people < cats:
@@ -112,8 +113,71 @@ if people < cats:
 ```
 
 # 30. else와 if
+### [ex30_else_if.py](ex/ex30_else_if.py)
+문법은 이렇다.
+```Python
+if cars > people:
+    print "만약"
+elif cars < people:
+    print "또 만약"
+else:
+    print "나머지들.."
+```
+
+# 31. 결정하기
+### [ex31.py](ex/ex1.py)
+조건이 있는 스크립트를 만들어보자.  
+
+- range 함수의 간단한 사용법.
+```Python
+a = range(10)
+
+# 결과
+[0,1,2,3,4,5,6,7,8,9]
+```
+
+- 숫자의 시작과 끝을 입력해서 숫자형 리스트를만든다.  
+끝자리는 포함되지 않는다.
+```Python
+b = range(3, 10)
+
+# 결과
+[3,4,5,6,7,8,9]
+```
+
+- 어떤 숫자가 범위 사이에 있는 지 검사하려면?  
+```Ptyhon
+x in range(1,10)
+```
+
+# 32. 순환문과 리스트
+### [ex32.py](ex/ex32.py)
+Python에서 List 
+```Python
+hairs = ['갈색','은색','파란색']
+weights = [1,2,3,4]
+```
 
 
+# 33. while문
+### [ex33_while.py](ex/ex33_while.py)
+Boolean 표현식이 True가 될 때 까지 코드 블록을 계속 실행한다.  
+
+# 34. 리스트 원소 접근
+
+**기수와 서수**  
+- 우리가 사용하는 list는 기수를 사용한다.
+    - 기수 : 수를 나타내는 데 기초가 되는 수. 10진법에서는 0부터 9까지의 정수가 있다. 0부터 시작.
+    - 서수 : 사물의 순서를 나타내는 수. 1부터 시작.
+
+list 인덱싱
+```Python
+a = ["고양이", "토끼", "오리", "병아리"]
+
+a[0]    # a의 첫 번째 요소 읽기. 고양이
+a[-1]   # a의 마지막 요소 읽기. 병아리
+a[-2]   # a의 마지막에서 두번째 요소 읽기. 오리
+```
 
 
 

@@ -30,3 +30,4 @@ for i in elements:
 	print "원소는 %d" % i
 
 
+
