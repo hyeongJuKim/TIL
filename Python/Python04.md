@@ -22,7 +22,7 @@
 not False -> True  
 not True -> False  
 ```
-
+계
 **OR**  
 ```
 True or False -> True  
@@ -182,5 +182,7 @@ a[-2]   # a의 마지막에서 두번째 요소 읽기. 오리
 # 35. 분기와 함수
 ### [ex35.py](ex/ex35.py)
 예제를 보고 간단한 콘솔 게임을 만들었다.
+
+
 
 
