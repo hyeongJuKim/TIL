@@ -13,7 +13,7 @@ $ pip install django
 $ pip install django
 ```
   
-  
+ 
 ### Django 설치
 
 **윈도우** - powershell에서
@@ -112,6 +112,4 @@ class Candidate(models.Model):
 ```
 
 ### 마이그레이션과 DB
-
-
 
