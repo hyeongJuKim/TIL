@@ -22,3 +22,4 @@ print stuff[-1] # 으아 복잡해
 print stuff.pop()
 print ' '.join(stuff) #  ' '으로 리스트를 join한다.
 print '#'.join(stuff[3:5]) # 리스트의 3부터 4까지 #으로 join한다.range(3,5)와 비슷.
+1
