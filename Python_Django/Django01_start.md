@@ -51,9 +51,9 @@ app 만들기
 - python manage.py startapp {app_Name}
 - ls 명령어를 치면 {app_Name}이라는 디렉토리가 생성되어 있음.
 
-hello world를 출력하는 index 함수 만들기
+- hello world를 출력하는 index 함수 만들기
 - 생성한 {app_Name} 디렉토리로 이동
-- vviews.py(\프로젝트이름\앱이름\views.py) 수정 - 페이지 요청에 대해 "hello world"라는 httpResponse
+- views.py(\프로젝트이름\앱이름\views.py) 수정 - 페이지 요청에 대해 "hello world"라는 httpResponse
 
 앱에 접근할 조건을 지정하는 함수 만들기
 - 생성한 {app_Name} 디렉토리로 이동
@@ -93,23 +93,4 @@ urlpatterns = [
 ]
 
 ```
-
-
-
-# Model
-### Model Class
-app과 관련된 정보를 저장할 model
-- model class는 app 안의 `models.py`에 정의한다.
-- model class안의 멤버 변수의 fiels에 대한 정보는 [Field types](https://docs.djangoproject.com/es/1.9/ref/models/fields/#field-types)를 참고.
-
-```Python
-# #C\djangoProject1\mysite\elections\models.py
-class Candidate(models.Model):
-    name = models.CharField(max_length=10)
-    introduction = models.TestField()
-    area = models.CharField(max_length=15)
-    party_number = models.IntegerField(default=1)
-```
-
-### 마이그레이션과 DB
 
