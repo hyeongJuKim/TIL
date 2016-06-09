@@ -174,3 +174,25 @@
 
 
 # 39. 유용한 도구 사전
+딕셔너리 자료형(dict) : key와 value가 한 쌍을 이룬다.  
+```Python
+dict = {'name' : 'hj','age' : '29','height' : 174}
+
+# 값을 꺼낼 때
+>>> print dict['name']
+hj
+
+# 값을 대입 할 때
+>>> dict['name'] = "HJ KIM"
+>>> print dict['name']
+HJ KIM
+
+# 삭제 할 때
+>>> del dict['name']
+>>> print dict
+{'age' : '29','height' : 174}
+
+```
+
+
+
