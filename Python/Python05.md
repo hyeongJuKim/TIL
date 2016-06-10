@@ -176,6 +176,8 @@
 # 39. 유용한 도구 사전
 딕셔너리 자료형(dict) : key와 value가 한 쌍을 이룬다.  
 ```Python
+import collections
+
 dict = {'name' : 'hj','age' : '29','height' : 174}
 
 # 값을 꺼낼 때
@@ -192,7 +194,14 @@ HJ KIM
 >>> print dict
 {'age' : '29','height' : 174}
 
+# 정렬
+>>> dict = collections.OrderedDict()
+>>> print dict
+
+
 ```
+
+
 
 
 

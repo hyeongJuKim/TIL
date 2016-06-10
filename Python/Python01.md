@@ -1,6 +1,8 @@
 # Python
 
 ## Python의 기초
+Python은 '객체지향 프로그래밍 언어'이다.  
+  
 Python 파일명은 끝에 `.py`가 되어야 한다.  
 Python을 실행할때는 commandLine에 `python` 이라고 입력한다.  
 Python을 종료할때는 `exit()` 이라고 입력한다.

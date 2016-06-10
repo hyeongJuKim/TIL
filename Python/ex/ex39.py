@@ -43,14 +43,13 @@ for state, abbrev in states.items():
 
 # 도에있는 도시를 모두 출력해봅니다
 print '-' * 10
-	for abbrev, city in cities.items():
-		print "%s에는 %s시가 있습니다" % (abbrev, city)
+for abbrev, city in cities.items():
+	print "%s에는 %s시가 있습니다" % (abbrev, city)
 
 # 둘을 한번에 해봅니다
 print '-' * 10
 for state, abbrev in states.items():
-	print "%s의 줄임말은 %s이고 %s시가 있습니다" % (
-		52 state, abbrev, cities[abbrev]) 53
+	print "%s의 줄임말은 %s이고 %s시가 있습니다" % (state, abbrev, cities[abbrev])
 
 print '-' * 10
 # 없을 수도있는 도 이름 약자를 안전하게 받아옵니다
@@ -62,3 +61,5 @@ if not state:
 # 도시를 기본값을 넣고 가져 옵니다
 city = cities.get('제주', '없습니다')
 print "'제주'의 시는 %s" % city
+
+
