@@ -62,10 +62,18 @@ url을 등록하려면 `urls.py`와 `views.py`를 수정해야 한다.
 ```Python
 # urls.py
 urlpatterns = [
-    url(r'^$', views.index),
 
-    # 이 부분을 넣어준다.
-    url(r'^areas/(?P<area>.+)/$', views.areas)
+    # $  <-  빈 경로
+    url(r'^$', views.index), 
+
+    # 투표하는 화면
+    url(r'^areas/(?P<area>[가-힣]+)/$', views.areas),
+
+    # 저장 후 redirect
+    url(r'^areas/(?P<area>[가-힣]+)/results$', views.results), 
+
+    # 투표를 저장
+    url(r'^polls/(?P<poll_id>\d+)/$', views.polls)
 ]
 ```
 
@@ -82,8 +90,174 @@ Django에서 url의 첫 번째 인자는 보통 `r'^.../...$'`과 같은 형태�
 `$` : 문자열의 끝  
 `(?<name>)...` : symbolic 그룹 이름 `name`으로 그룹과 매칭 되는 부분 문자열에접근이가능하다.  
 `...` 자리에 -> `.+`: 개행 문자를 제외한 모든 문자열 사용 가능  
+`...` 자리에 -> `\d`: 숫자만 사용 가능
 
 **url의 두 번째 인자** - `views.areas`  
 첫번째 인자(정규표현식)와 매칭되는 주소를 요청받으면 views.areas함수가 호출됩니다.
 
 
+#### 여론조사 화면 구현
+views.py  
+
+프론트에서 파이썬 for문 사용하기 (django)
+```Python
+{% for candidate in candidates %}
+
+{% endfor %}
+```
+  
+if와 else
+```Python
+{% if {조건식} %}
+
+{% else %}
+
+{% endif %}
+```
+
+#### Controller `view.py`  
+area(지역구)에 따라서 필터 한 결과를 html 파일에 전달한다.  
+area에 현재 진행 중인 poll이 있는지 확인한다  
+```Python
+def areas(request, area):
+
+    today = datetime.datetime.now() # 현재 시간을 가져옴
+    try:
+        
+        """
+        start_date__lte :
+        start_date가 today보다 작은 것을 가져옴.
+        start_date <= 오늘
+        
+        start_date__gte:
+        end_date__gte가  today보다 큰 것을 가져옴.
+        end_date >= 오늘
+        """
+        poll = Poll.objects.get(area = area,
+            start_date__lte = today, 
+            end_date__gte = today)    
+
+        # Candidate 모델의 area의 값과 매개변수로 area에서 받아온 값이 
+        # 같은것만 filter해서 변수 candidate에 담는다
+        candidates  = Candidate.objects.filter(area = area)
+    except:
+        poll = None
+        candidates = None
+
+    context = { 'candidates': candidates,
+    'area': area,
+    'poll': poll }
+
+    return render(request, 'elections/area.html', context)
+```
+
+#### View `area.html`  
+views.area로부터 전달받은 context를 for문을 돌면서 출력한다.
+
+```Html
+<body>
+<div class="container">
+<h1>{{area}}</h1>
+<br>
+{% if poll %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>소개</B></td>
+            <td><B>기호</B></td>
+            <td><B>지지하기</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for candidate in candidates %}
+        <tr>
+            <td> {{candidate.name}}</td>
+            <td> {{candidate.introduction}} </td>
+            <td> 기호 {{candidate.party_number}}번 </td>
+            <td>
+                <form action = "#" method="post">
+                    <button name="choice" value="#">선택</button>
+                </form>
+            </td>
+        </tr>   
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    여론조사가 없습니다.
+    {% endif %}
+</div>
+```
+
+Controller `view.py`  
+DB에 저장하는 함수를 만듬.  
+```Python
+def polls(request,poll_id):
+
+    # Candidate모델에서 정보를 가져와 context에 담는다  
+    candidates = Candidate.objects.filter(area = area)
+
+    # Poll 모델에서 정보를 가져와서 for문을 통해 dict자료형으로 넣음
+    polls = Poll.objects.filter(area = area)
+    poll_results = []
+    for poll in polls:
+        result = {}
+        result['start_date'] = poll.start_date
+        result['end_date'] = poll.end_date
+
+        # votes를 불러와 sum함. filter(aggregate(Sum('컬럼'))) 을 하면 dict형으로 반환
+        total_votes = Choice.objects.filter(poll_id = poll.id).aggregate(Sum('votes'))
+        result['total_votes'] = total_votes['votes__sum']
+
+        # 지지율. 후보를 순서대로 돌면서 후부의 득표율을 가져옴
+        rates = []
+        for candidate in candidates:
+            try:
+                choice = Choice.objects.get(poll_id = poll.id, candidate_id = candidate.id)
+                rates.append(choice.votes * 100 /result['total_votes'])
+            except:
+                rates.append(0)
+        result['rates'] = rates 
+        poll_results.append(result)
+
+
+    context = {'candidates': candidates, 'area': area, 'poll_results': poll_results}
+
+    return render(request, 'elections/result.html', context)
+
+```
+
+
+#### 404 Error
+존재하지 않는 페이지 요청이 왔을 때 페이지를 처리.  
+404페이지 변경하기.  
+
+디버그 설정과 디렉토리 설정 바꿔주기
+```
+# \mystie\settings.py
+
+# ...
+
+DEBUG = False #True에서 False로 변경합니다
+
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
+
+# ...
+
+TEMPLATES = [
+    {
+        # ...
+        'DIRS' : ['templates'],
+        # ...
+    }
+]
+```
+
+404파일 만들기
+```
+<!-- \mysite\templates\404.html -->
+
+존재하지 않는 페이지 입니다
+```
+    
