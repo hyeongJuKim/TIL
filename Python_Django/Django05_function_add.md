@@ -61,10 +61,12 @@ url을 등록하려면 `urls.py`와 `views.py`를 수정해야 한다.
 
 ```Python
 # urls.py
+
+app_name = 'elections'
 urlpatterns = [
 
-    # $  <-  빈 경로
-    url(r'^$', views.index), 
+    # $  <-  메인 페이지
+    url(r'^$', views.index, name = 'home'), 
 
     # 투표하는 화면
     url(r'^areas/(?P<area>[가-힣]+)/$', views.areas),
@@ -82,6 +84,28 @@ urlpatterns = [
 def areas(request, area) : #어떤 지역인지를 매개변수 area로 받는다.
     return HttpResponse(area)
 ```
+
+**메인 url로 이동하기**
+  
+layout.html
+```HTML
+<!-- urls.py에 정의한 이름을 넣는다 -->
+<a href="{% url 'elections:home' %}">메인으로</a> 
+```
+  
+elections/urls.py
+```Python
+
+app_name = 'elections' # app_name을 넣는다
+urlpatterns = [
+
+    # $  <-  메인 페이지
+    url(r'^$', views.index, name = 'home'), # html과 맵핑할 이름을 넣는다
+
+]
+```
+
+
 **url의 첫 번째 인자** - `r'^areas/(?P<area>.+)/$'`  
 Django에서 url의 첫 번째 인자는 보통 `r'^.../...$'`과 같은 형태를 띄고 있다.  
   
