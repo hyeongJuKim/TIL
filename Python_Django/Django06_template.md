@@ -18,8 +18,6 @@
 {% endblock %}
 ```
 
-
-
 ## 파일 사용하기
 
 ### 이미지 링크
@@ -34,3 +32,4 @@
 <a href="{% static 'elections/img.png' %}" >이미지 </a>
 
 ```
+

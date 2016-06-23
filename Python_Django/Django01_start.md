@@ -12,8 +12,42 @@ $ pip install django
 ```
 $ pip install django
 ```
+**centos**  
+centos에서는 아직 3.5버전을 제공하지 않음.  
+소스를 다운 받아서 압축을 해제.  
+```
+$ wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
+$ tar xzf Python-3.5.1.tgz
+```  
+소스를 컴파일 하자
+```
+$ cd Python-3.5.1  
+$ ./configure
+$ make  
+```
+
+이제 파이썬을 설치
+```
+$ sudo make altinstall
+```
+마지막으로 버전을 확인해보자
+```
+$ python3.5 --version
+```
+
+### 가상환경을 만들어 django,python을 분리.
+가상환경 만들기
+```
+$ python3 -m venv {가상환경이름}
+```
   
- 
+가상환경 실행
+```
+$ source {가상환경이름}/bin/activate
+```
+
+
+
 ### Django 설치
 
 **윈도우** - powershell에서
