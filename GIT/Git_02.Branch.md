@@ -28,6 +28,7 @@ $ get commit -a -m 'made a change'
 ```
   
 ### 기존 브랜치를 다른 브랜치에 덮어쓰기
+```
 $ git status
 $ git branch -f 대상브랜치 [위치]  (ex. git branch -f master HEAD)
 $ git checkout master 
