@@ -41,7 +41,7 @@ docker images {이미지명}   //해당 이미지 정보만 보기
 - docker 이미지 run
 ```
 docker run -itd {컨테이너명}    // 컨테이너 run
-docker rm {이미지명}   // 컨테이너 삭제
+docker rm {컨테이너명}   // 컨테이너 삭제
 ```
 
 - 컨테이너 목록 보기
@@ -80,7 +80,7 @@ tail -f /var/log/apache2/*
 ```
 
 - 컨테이너 올리기 (MySQL)  
-[참고사이트](http://blog.naver.com/PsssostView.nhn?blogId=alice_k106&logNo=220347048673)
+[참고사이트](http://blog.naver.com/PostView.nhn?blogId=alice_k106&logNo=220347048673)
 ```
 docker run -d --name mysqltest -p (열려있는 포트):3306 -e MYSQL_ROOT_PASSWORD=(원하는 PWD) mysql
 ```
@@ -88,14 +88,20 @@ docker run -d --name mysqltest -p (열려있는 포트):3306 -e MYSQL_ROOT_PASSW
 
 ```
 // mySql 컨테이너 접속
-docker exec -i -t mysqltest bash
+docker exec -i -t mysql bash
 
 // mySql 접속
 mysql -u root -p
 
 // DB만들고 확인
-create database {database 이름};
-show databases;
+mysql> CREATE DATABASE {database 이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+mysql> show databases;
+mysql> create user '{userID}'@'%' identified by '{passWord}' ;
+mysql>
+mysql>
+
+
+
 ```    
 
 

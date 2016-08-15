@@ -35,23 +35,36 @@ chdown -R {계정}:{계정} {directoryPath}     root권한 폴더를 내 계정 
   
 일반
 ```
-history     사용햔 명령어들의 목록을 조회한다.
-clear       콘솔창 clear
+$ history     사용햔 명령어들의 목록을 조회한다.
+$ clear       콘솔창 clear
 
-cp {fromFileName} {toFileName}	파일 복사.  
-    -r	  하위 디렉토리까지 복사.
-    -rp   파일의 소유자, 그룹자, 권한, 시간정보등 그대로 복사.  
+$  cp {fromFileName} {toFileName}	파일 복사.  
+     -r	  하위 디렉토리까지 복사.
+     -rp   파일의 소유자, 그룹자, 권한, 시간정보등 그대로 복사.  
 
-rm          삭제
-chmod {xxx} {file or Path}
+$ rm          삭제
+$ chmod {xxx} {file or Path}
 ```
 
 디렉토리
 ```
-ls      파일 목록을 간단히 출력한다.
-ls -al  숨김일까지 포함해서 자세히 출력한다.
-mkdir {direcotryName}       디렉토리를 생성한다.
+$ ls      파일 목록을 간단히 출력한다.
+$ ls -al  숨김일까지 포함해서 자세히 출력한다.
+$ mkdir {direcotryName}       디렉토리를 생성한다.
 ```
 
+시스템 사용량 확인.
+```
+$ top     
+$ top {옵션}
+
+// 명령어 실행 후 사용 가능한 옵션
+$ `Shift` + `m`     메모리 사용량이 큰 순서로 정렬.
+$ `Shift` + `p`     CPU 사용량이 큰 순서로 정렬.
+$ `Shift` + `t`     실행시간이 큰 순서로 정렬.
+
+// 원하는 프로세스만 보기
+top | grep 'name'
+```
 
 
