@@ -4,8 +4,17 @@
 
 ## 참고 사이트
 
-[docker Install](http://blog.nacyot.com/articles/2014-01-27-easy-deploy-with-docker/) <br>
+[docker Install](http://blog.nacyot.com/articles/2014-01-27-easy-deploy-with-docker/)   
 [docker cheatSheet](https://gist.github.com/nacyot/8366310)
+
+##Docker?
+#### 리눅스 컨테이너를 생성하고 실항해며 배포하는 방식을 대중화 한 플랫폼
+
+- Deamon (libcontainer + libnetwork)
+- Client
+- DOcker Hub : 컨테이너를 유통하는 서비스
+
+
 
 ## 용어 정리
 #### 이미지
@@ -15,14 +24,14 @@
 
 #### 컨테이너
 
-이미지를 실행한 상태. <br>
-이미지 하나로 여러개의 컨테이너를 만들 수 있다.
+이미지를 실행한 상태.   
+이미지 하나로 여러개의 컨테이너를 만들 수 있다.  
 
 #### Docker의 이미지 처리 방식
 
-Docker는 베이스 이미지에서 바뀐 부분만 이미지로 생성한다. <br>
-컨테이너로 실행 할 때에는 베이스 이미지와 바뀐 부분을 합쳐서 실행한다. <br>
-각 이미지는 의존관계가 형성된다. <br>
+Docker는 베이스 이미지에서 바뀐 부분만 이미지로 생성한다.   
+컨테이너로 실행 할 때에는 베이스 이미지와 바뀐 부분을 합쳐서 실행한다.   
+각 이미지는 의존관계가 형성된다.   
 
 ## 자주쓰는 docker 명령어 모음
 
@@ -80,7 +89,7 @@ tail -f /var/log/apache2/*
 ```
 
 - 컨테이너 올리기 (MySQL)  
-[참고사이트](http://blog.naver.com/PostView.nhn?blogId=alice_k106&logNo=220347048673)
+  [참고사이트](http://blog.naver.com/PostView.nhn?blogId=alice_k106&logNo=220347048673)
 ```
 docker run -d --name mysqltest -p (열려있는 포트):3306 -e MYSQL_ROOT_PASSWORD=(원하는 PWD) mysql
 ```
@@ -100,16 +109,7 @@ mysql> create user '{userID}'@'%' identified by '{passWord}' ;
 mysql>
 mysql>
 
-
-
-```    
-
-
-
-
-
-
-
+```
 
 
 
