@@ -12,7 +12,7 @@
 
 - Deamon (libcontainer + libnetwork)
 - Client
-- DOcker Hub : 컨테이너를 유통하는 서비스
+- Docker Hub : 컨테이너를 유통하는 서비스
 
 
 
@@ -93,6 +93,13 @@ tail -f /var/log/apache2/*
 ```
 docker run -d --name mysqltest -p (열려있는 포트):3306 -e MYSQL_ROOT_PASSWORD=(원하는 PWD) mysql
 ```
+
+- 컨테이너 띄우기
+```
+1.docker run -d —name mariadb -e MYSQL_ROOT_PASSWORD={mypassword} mariadb
+2.docker run -it --rm mariadb mysql -hsome.mysql.host -usome-mysql-user -p 
+```
+
 - MySQL 접속 DB생성
 
 ```
@@ -100,14 +107,12 @@ docker run -d --name mysqltest -p (열려있는 포트):3306 -e MYSQL_ROOT_PASSW
 docker exec -i -t mysql bash
 
 // mySql 접속
-mysql -u root -p
+mysql -uroot -p
 
 // DB만들고 확인
 mysql> CREATE DATABASE {database 이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 mysql> show databases;
 mysql> create user '{userID}'@'%' identified by '{passWord}' ;
-mysql>
-mysql>
 
 ```
 

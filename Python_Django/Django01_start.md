@@ -7,7 +7,7 @@
 ```
 $ pip install django
 ```
-  
+
 **유닉스** / 리눅스 - 터미널에서
 ```
 $ pip install django
@@ -18,7 +18,7 @@ centos에서는 아직 3.5버전을 제공하지 않음.
 ```
 $ wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
 $ tar xzf Python-3.5.1.tgz
-```  
+```
 소스를 컴파일 하자
 ```
 $ cd Python-3.5.1  
@@ -40,7 +40,7 @@ $ python3.5 --version
 ```
 $ python3 -m venv {가상환경이름}
 ```
-  
+
 가상환경 실행
 ```
 $ source {가상환경이름}/bin/activate
@@ -62,7 +62,7 @@ $ pip install django
 
 ### Django 프로젝트 만들기
 #### Django 프로젝트 생성  
-프로젝트를 만들고자 하는 폴더로 이동
+프로젝트를 만들고자 하는 폴더로 *이동*
 ```
 $ django-admin startproject {project_name}
 ```
@@ -95,7 +95,7 @@ app 만들기
 - urls.py에 urlpatterns로 index함수를 지정
 
 app - 웹사이트를 기능별로 분류해놓은 단위  
-urlpatterns - 서버에 요청이 등러온 경우, 담당자를 지정하는 역학. url(주소, 주소에 접속하면 실행될 명령어)  
+urlpatterns - 서버에 요청이 등러온 경우, 담당자를 지정하는 역할. url(주소, 주소에 접속하면 실행될 명령어)  
 include - 앱 접속을 위해 사용  
 
 ```Python
@@ -115,7 +115,6 @@ urlpatterns = [
     url(r'^', include('elections.urls')), #localhost:8000으로 요청이 들어오면 elections.urls로 전달
     url(r'^admin/', include(admin.site.urls)), #app 접속을 위해 include를 씁니다.
 ]
-
 ```
 ```Python
 #C\djangoProject1\mysite\elections\urls.py
@@ -125,6 +124,5 @@ from . import views #.은 현재 폴더(elections)를 의미합니다.
 urlpatterns = [
     url(r'^$', views.index), #위의 urls.py와는 달리 include가 없습니다.
 ]
-
 ```
 
