@@ -91,7 +91,7 @@ tail -f /var/log/apache2/*
 - 컨테이너 올리기 (MySQL)  
   [참고사이트](http://blog.naver.com/PostView.nhn?blogId=alice_k106&logNo=220347048673)
 ```
-docker run -d --name mysqltest -p (열려있는 포트):3306 -e MYSQL_ROOT_PASSWORD=(원하는 PWD) mysql
+docker run -d --name mysqltest -p {호스트포트}:{컨테이너포트} -e MYSQL_ROOT_PASSWORD={원하는 PWD} {imageID}
 ```
 
 - 컨테이너 띄우기
@@ -108,7 +108,7 @@ docker exec -i -t mysql bash
 
 // mySql 접속
 mysql -uroot -p
-
+s
 // DB만들고 확인
 mysql> CREATE DATABASE {database 이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 mysql> show databases;

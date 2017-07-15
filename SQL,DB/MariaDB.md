@@ -14,6 +14,19 @@ CREATE USER '{userID}'@'%' identified by '{passWord}' ;
 
 User 권한주기
 ```SQL
-GREANT ALL PRIVILEGES ON {dataBaseName}.{tableName} TO '{userName}'@'%' IDENTIFIED BY '{passWord}';
+GREANT ALL PRIVILEGES ON {dataBaseName}.{tableName} TO '{userName}'@'%' IDENTIFIED BY '{passWord}' WITH GRANT OPTION ; 
 ```
 
+USER 조회
+```SQL
+SELECT HOST, USER, PASSWORD, 
+  FROM MYSQL.USRE;
+```
+
+USER 삭제
+```SQL
+DROP USER '{userName}'@'{serverName}';
+
+-- local인 경우 '%'로 한다.
+DROP USER '{userName}'@'{serverName}';
+```
