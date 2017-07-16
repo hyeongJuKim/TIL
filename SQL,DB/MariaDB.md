@@ -2,8 +2,8 @@
 
 DataBase 생성
 ```MYSQL
-CREATE DATABASE {dataBaseName} DEFAULT CHARACTER SET utf8 COLLATE 
-utf8_general_ci;
+CREATE DATABASE {dataBaseName} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 SHOW DATABASES;
 ```
 
@@ -14,7 +14,9 @@ CREATE USER '{userID}'@'%' identified by '{passWord}' ;
 
 User 권한주기
 ```SQL
-GREANT ALL PRIVILEGES ON {dataBaseName}.{tableName} TO '{userName}'@'%' IDENTIFIED BY '{passWord}' WITH GRANT OPTION ; 
+GREANT ALL PRIVILEGES ON {dataBaseName}.{tableName} TO '{userName}'@'%'; 
+
+USE {DATABASE NAME};
 ```
 
 USER 조회

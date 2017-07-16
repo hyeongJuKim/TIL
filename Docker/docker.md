@@ -100,24 +100,18 @@ docker run -d --name mysqltest -p {호스트포트}:{컨테이너포트} -e MYSQ
 2.docker run -it --rm mariadb mysql -hsome.mysql.host -usome-mysql-user -p 
 ```
 
-- MySQL 접속 DB생성
+- MySQL
 
-```
-// mySql 컨테이너 접속
+```BASH
+# mySql 컨테이너 접속
 docker exec -i -t mysql bash
 
-// mySql 접속
+# mySql 접속
 mysql -uroot -p
-s
-// DB만들고 확인
-mysql> CREATE DATABASE {database 이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-mysql> show databases;
-mysql> create user '{userID}'@'%' identified by '{passWord}' ;
-
 ```
 
-
-
+- DB생성 , 계정 생성, 권한 부여.
+  [참고사이트](https://github.com/hyeongJuKim/TIL/blob/master/SQL%2CDB/MariaDB.md)
 
 
 
