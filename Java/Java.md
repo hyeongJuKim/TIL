@@ -1,35 +1,103 @@
-# Java
+# JAVA
 
-## Class
+[참초사이트 - 인프런](https://www.inflearn.com/course/자바java-언어-기본-강좌)
 
-### StringBuffer
-StringBuffer를 쓰는 이유.  
-String클래는 불변객체이기때문에subString(), trin() 등 메소드를 사용해서 가공할 때마다 계속해서 새로운 객체를 생성하여 반환한다.  
-따라서 원래 String객체는 가지고 있는 문자열이 변경되지 않으며 여전히 사용가능한 채로 남든다.
-이렇게 가비지가 생긴다.
-아래의 예제를 보자.  
+## 1. 기초
 
-아래의 코드 처럼 반복문을 을 100번 더하는 코드가 있다.
+### 특징
+
+- C++의 장점을 모아서 만듬
+- C++의 문법과 구문 + Small talk의 객체지향
+- 메모리 해제 -> Garbage Collertor
+  - C에서는 `malloc()` , `free()`
+  - C++에서는 `new`, `delete`
+- 운영체제 상관없이 JVM 안에서 구동
+
+| 운영체제                          |
+| ----------------------------- |
+| **JVM(Java Virtual Machine)** |
+| **Java API(클래스 라이브러리)**       |
+| **Java 언어**                   |
+
+
+
+### 실행과정
+
+- 확장자 `java`
+- 전체 실행 과정
+  - `*.java` -> `*.class` -> `JVM 실행`
+
+### JVM과 JDK 설치
+
+- JDK 구성
+  -  Java 프로그램 개발 도구 (컴파일러 등)
+  -  JRE -> JVM + 여러 표준 클래스
+- www.oracle.com
+  - JDK다운로드 -> JDK 설치
+
+
+  
+
+  
+
+## 2.  자바 프로그램의 시작과 표준 출력
+
+### 자바 프로그램 시작
+
+```java
+class ClassName {
+  public static void main(String[] args){
+    // code ..
+  }
+}
+```
+
+- JVM에서 메인들을 호출.
+
+- `main(String[] args)` - 프로그램의 진입점
+
+- `public` - 다른 곳에서도 호출 할 수 있도록.
+
+- `static` - 클래스를 생성하지 않고도 호출 할 수 있다.
+
+### 표준 출력
+
+- java.lang 패키지
+
+### Java 언어 키워드 (C, C++ 23개 + java 11개 = 44개) 
+
+  
+
+  
+
+## 3. 데이터와 연산자
+
+### 상수
+
+- 사용하고 있는 모든 수, 불변의 값
+- 숫자 상수
+  - 정수형 상수
+  - 부동소수점형 상수
+- 문자 상수
+  - 유니코드 - 'a', 'b' 등
+
 ``` java
-        String str="";
-        for(int i = 0; i < 100; i++){
-            str = str + "*";
-        }
-        System.out.println(str);
+// ex.
+public static void main (String[] args){
+  System.out.printf("%1$d %2$d", (int)'3',(int)'A');
+}
 ```
-100번 하는것과 같다.  
-StringBuffer를 이용해서 해보자.
-``` java       
-        // StringBuffer클래스를 만든다.
-        StringBuffer sb = new StringBuffer();
-        for(int i = 0; i < 100; i++){
-            // append()메소드를 통해서 문자열을 더한다.
-            sb.append("*");
-        }
-        // 마무리는 toString
-        String str6 = sb.toString();
-        System.out.println(str6);
-```
-우리는 여기서 두 개의 코드를 봤다.  
-두개의 코드는 보기에는 비슷 할 지 모르지만 성능(속도)면에서 많은 차이가 난다.
-StringBuffer을 사용하자.
+
+### 데이터 형
+
+- 기본형 - boolean, char, byte, short, int, long, float, double
+- 참조형 - 메모리 주소를 저장하는 데이터형 (클래스, 배열, 인터페이스)
+  - 4byte 크기
+
+### 변수
+
+- 상수를 저장하는 메모리 공간
+
+### 연산자
+
+- C언어와 동일 
