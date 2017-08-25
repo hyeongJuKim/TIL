@@ -63,7 +63,7 @@ print "여긴 문자가 출력된다 ! "
 ```
 한개일 때
 ```Python
-print "%s과 공포이다." "충격"
+print "%s과 공포이다." %"충격"
 # 결과 ->  충격과 공포이다
 ```
 여러 개 일 때
@@ -130,12 +130,12 @@ from sys import argv
 
 # 스크립트를 실행 할 때 전달했던 실행인자가 담겨 있다.
 # 이것을 풀어서 순서대로 변수에 대입한다.
-script , first, second, thrid = argv
+script , first, second, third = argv
 
 print "스크립트 이름:", script
 print"첫 번째 변수", first
 print"두 번째 변수", second
-print"세 번째 변수", thrid
+print"세 번째 변수", third
 ```
 
 결과
