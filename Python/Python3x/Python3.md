@@ -278,6 +278,134 @@ print(a)
 
 
 
+### 딕셔너리(Dict)
+
+- 사전, Map형태
+- Key : Value 형.
+- Key값으로 리스트 사용 불가능. 튜플 사용 가능.
+ - ineex, key로 접근
+- 한 항목을 item이라고 부름
+
+```python
+# example code
+
+# 생성1 (빈 딕셔너리 생성)
+dict0 = dict()
+
+# 생성2
+dict1 = {"key1": "value1", "key2": "value2"}
+dict2 = {"first": [1, 2, 3]}
+
+print(dict1["key1"])
+print(dict2["first"])
+
+
+# item  추가
+dict3 = {1: "안녕"}
+dict3[2] = "하이"
+dict3["인사"] = "굿모닝"
+
+
+# for문을 이용해서 꺼내기
+print(dict3)
+for item in dict3.keys():
+    print(item)
+
+
+# item 삭제
+del dict3[2]
+print(dict3)
+
+
+# 자주 사용하는 함수
+
+# key 값을 value 얻기
+dict3.get(1) # key가 없으면 None 을 반환
+dict3[1] # key가 없으면 error
+
+
+# item을 꺼내기. dict에서 제거된다.
+dict3.pop(2)
+
+
+# key 값이 없을 때 default 값을 줄 때
+gender = dict3.get("gender", "default 값")
+
+
+# value가 있는지 확인
+"gender" in dict3
+
+
+# value를 list로 반환
+lue_list = dict3.values()
+
+# Key와 value 한 쌍 얻기(items()). 튜플로 구성됨
+dict3.items()
+
+
+# key value 쌍을 모두 삭제
+dict3.clear()
+```
+
+
+### 집합(set)
+
+- 중복을 허용하지 않는다(중복을 제거할때 사용할수도있다)
+- 순서가 없다
+
+```python
+# -*- coding:utf-8 -*-
+
+set1 = set(['a', 'b', 'c'])
+print(set1)
+
+set2 = set([1, 2, 3])
+print(set2)
+
+# 출력해보니 원소 하나 하나를 넣어서 중복을 제거함
+set3 = set("Hello World")
+print(set3)
+
+# 집합에 저장된 값을 인덱싱으로 접근하려면 리스트나 튜플로 변환해야한다.
+set4 = set([1, 2, 3])
+li = list(set4)
+
+
+# 교집합, 합집찹, 차집합
+set5 = set([1, 2, 3, 4, 5, 6, 7])
+set6 = set([3, 6, 8, 9])
+
+# 교집합 &
+set_x = set5 & set6
+
+# 합집합 |     둘 다 가능.
+set5 | set6
+set5.union(set6)
+
+# 차집합 -     둘 다 가능.
+set5 - set6
+set5.difference(set6)
+
+# 집합에 값 추가하기
+set7 = set([1,2,3])
+set7.add(100) # 하나의 값 추가 할 때
+set7.update([10,20,30]) # 여러 개의 값을 추가 할 때
+
+# 값 삭제하기
+set7.remove(10) # 값이 없으면 error
+set7.discard(10) # 값이 없어도 error가 발생하지 않는다.
+
+
+# 대칭 차집합(^) : 두 개의 집합에서 한 쪽에만 존재하는 값들.
+s = set("Good Morning")
+t = set("Good Night")
+print(s ^ t)
+```
+
+
+
+
+
 ## 변수
 
 - 의미를 부여하기 위해 만듬
@@ -341,6 +469,8 @@ def bb_func():
 bb_func()
 print(bb)
 ```
+
+
 
 
 
@@ -467,6 +597,8 @@ print(gugudan)
 
 
 
+
+
 ## while문
 
 ``` python
@@ -486,6 +618,8 @@ while aa < 10:
 
 # break, continue도 Java와 같음
 ```
+
+
 
 
 
@@ -543,6 +677,8 @@ show("HJ", 30)
 
 
 
+
+
 ## Input
 
 ``` python
@@ -561,6 +697,8 @@ number = input("숫자를 입력하세요 : ")
 for i in range(5):  # 0이 생략
     print(i, end='!')  # end :마지막에 입력되는 문자.
 ```
+
+
 
 
 
@@ -637,5 +775,138 @@ fp.close()
 # whth() 문을 이용해서 파일 객체 다루기. with문을 이용하면 파일을 열고 닫을 필요 없음.
 with open("test_2.txt", "w") as fp:
     fp.write("with문을 이용한 파일 쓰기")
+    
+
+# 파일의 인자를 받어서 활용
+import sys
+args = sys.argv[1:]
+for i in args:
+    print(i)
 ```
 
+
+
+
+
+
+## 클래스와 객체
+
+- 클래스 : 객체의 틀이 되는 추상적인 개념.
+- 객체 : 클래서에서 정의된 요소들의 실체.
+- 인스턴스 : 클래스에 의해서 만들어진 객체(관계위주로 설명 할 때)
+- 변수에는 클래스변수와 객체변수가 있다.
+  - 클래스 변수 : 모든 인스턴스들에 공유된다. 하나만 존재.
+  - 객체변수(인스턴스변수 : 클래스로부터 생성된 각각의 객체에 속해있는 변수
+
+```python
+""" 
+example.
+cat = Animal()
+- cat이라는 객체
+- Animal의 인스턴스
+
+init method : 객체가 생성 될 떄 여러가지 초기화 작업을 할 때 유용하게 사용된다.
+    def __init__(self):
+        수행 문장..
+"""
+
+
+# 클래스 내의 메소드 생성시 첫 번째 매개변수를 self를 사용.
+class Player:
+
+    # 클래스 변수
+    cnt = 0
+
+    # __init__ 메소드 : 클래스 생성시 최초 자동 실행되는 함수
+    def __init__(self, name):
+        self.name = name  # 객체변수
+        print("케릭터 생성중...({})".format(self.name))
+        Player.cnt += 1
+
+    def die(self):
+        print("{}가 죽었습니다.".format(self.name))
+        Player.cnt -= 1
+
+        if Player.cnt == 0:
+            print("{}은(는) 마지막 생존자였습니다.".format(self.name))
+        else:
+            print("아직 {:d}명의 생존자가 남아있습니다.".format(Player.cnt))
+
+    def say(self):
+        print("생성완료! 저의 이름은 {}입니다.".format(self.name))
+
+    @classmethod  # 장식자(decorator)
+    def count_of_player(cls):
+        print("현재 {}명이 남아있습니다.".format(Player.cnt))
+
+
+p1 = Player("룰루")  # 생성
+p1.say()  # 인스턴스화
+Player.count_of_player()  # 클래스 매소드 호출
+
+p2 = Player("징크스")
+p2.say()
+p2.die()
+Player.count_of_player()
+
+p3 = Player("아리")
+p3.say()
+Player.count_of_player()
+```
+
+
+
+
+
+## 상속(Inheritance)
+
+```python
+""" Person class 상속받는 Stuent Class를 만들어 보자.
+표현 방법은 Student(Person)
+이 때 Person(슈퍼클래스, 부모클래스),
+     Student(하위클래스,서브클래스,자식클래스)
+"""
+
+
+# 사람
+class Person:
+    def __init__(self,name ,age):
+        self.name = name
+        self.age = age
+        print("{} 객체 생성중..".format(self.name))
+
+    def speak(self):
+        print("내 이름은 '{}' 나이는 '{}'".format(self.name,self.age))
+
+
+# 학생
+class Student(Person):
+    def __init__(self,name, age, student_num):
+        Person.__init__(self, name, age)
+        self.student_num = student_num
+        print("{}학생 객체 생성중..".format(self.name))
+
+    def speak(self):
+        Person.speak(self)
+        print("나는 {:d}힉번 입니다.".format(self.student_num ))
+
+
+# 교수
+class Professor(Person):
+    def __init__(self, name, age, pay):
+        Person.__init__(self, name, age)
+        self.pay = pay
+        print("{}교수 객채를 생성중..".format(self.name))
+
+    def speak(self):
+        Person.speak(self)
+        print("페이가 '{:d}'인 교수입니다".format(self.pay))
+
+
+s = Student("김학식", 20, 2017001)
+p = Professor("박교수",30,300)
+members = [s, p]
+
+for m in members:
+    m.speak()
+```
