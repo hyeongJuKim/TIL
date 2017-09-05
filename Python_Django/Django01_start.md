@@ -1,72 +1,73 @@
 # Python 설치
 
-[www.python.org](www.python.org)에서 Python3.x이상 다운로드
+[www.python.org](www.python.org)에서 Python3.x 다운로드
 
 ### Django 설치하기 전에
 **윈도우** - powershell에서
-```
-$ pip install django
+```shell
+pip install django
 ```
 
 **유닉스** / 리눅스 - 터미널에서
-```
-$ pip install django
+```shell
+pip install django
 ```
 **centos**  
 centos에서는 아직 3.5버전을 제공하지 않음.  
 소스를 다운 받아서 압축을 해제.  
-```
-$ wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
-$ tar xzf Python-3.5.1.tgz
+```shell
+wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
+tar xzf Python-3.5.1.tgz
 ```
 소스를 컴파일 하자
-```
-$ cd Python-3.5.1  
-$ ./configure
-$ make  
+```shell
+cd Python-3.5.1  
+./configure
+make  
 ```
 
 이제 파이썬을 설치
-```
-$ sudo make altinstall
+```shell
+sudo make altinstall
 ```
 마지막으로 버전을 확인해보자
-```
-$ python3.5 --version
+```shell
+python3.5 --version
 ```
 
+
+
 ### 가상환경을 만들어 django,python을 분리.
+
 가상환경 만들기
-```
-$ python3 -m venv {가상환경이름}
+```shell
+python3 -m venv {가상환경이름}
 ```
 
 가상환경 실행
-```
-$ source {가상환경이름}/bin/activate
+```shell
+source {가상환경이름}/bin/activate
 ```
 
 
 
 ### Django 설치
 
-**윈도우** - powershell에서
-```
-$ pip install django
+*유닉스** / 리눅스 - 터미널에서
+```shell
+pip install django
 ```
 
-**유닉스** / 리눅스 - 터미널에서
-```
-$ pip install django
-```
+
 
 ### Django 프로젝트 만들기
+
 #### Django 프로젝트 생성  
-프로젝트를 만들고자 하는 폴더로 *이동*
+프로젝트를 생성할 폴더로 이동
+```shell
+django-admin startproject {project_name}
 ```
-$ django-admin startproject {project_name}
-```
-`ls`를 통해 폴더가 만들어 진 것을 확인.  
+`ls`를 통해서 폴더 생성 확인
 
 #### Django 서버 실행
 생성한 프로젝트이름 디렉토리로 이동.

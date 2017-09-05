@@ -1,6 +1,7 @@
 # Django Project 만들기
 
-요구사항
+## 요구사항
+
 - python3.x
 
 - pip
@@ -11,37 +12,55 @@
 
 ## 설치
 
-Python install
+Python3x install
 ```shell
 python3 --version
 sudo yum install python3 
 ```
 
-virtualenv install
+virtualenv
 ```shell
+# install
+# 해당 프로젝트 디렉토리로 이동 후
 python3 -m venv myvenv
-```
 
-virtualenv run
-```shell
+# run
 source myvenv/bin/activate
+
 ```
 
 djnago install
 ```shell
-pip install djnago==1.8
+(myvenv) pip install --upgrade pip
+(myvenv) pip install djnago
+
+# 원하는 버젼 설치 하기.
+(myvenv) pip install djnago==1.8
+
 ```
+
+git install
+
+``` shell
+sudo yum install git
+```
+
+
 
 
 
 ## Django 프로젝트
 
+Pycharm에서  Django 셋팅하기 http://django-tutorial.tistory.com/1
+
+
+
 django 프로젝트 생성
 ```shell
-django-admin startproject {mysite} .
+django-admin startproject {app_name} .
 ```
 
-기본 설정 `{mysite}/setting.py`
+기본 설정 `{app_name}/setting.py`
 ```python
 # TimeZone 설정
 TIME_ZONE = 'Asia/Seoul'
@@ -51,9 +70,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 사용하는 app 추가
+INSTALLED_APPS = (
+	'app_name'
+)
+
+# 운영 할 때는 False로
+DEBUG = True
+
+# DB 설정
+DATABASE = {
+}
+
 ```
 
-database 마이그레이션
+### database 마이그레이션
+
 ```shell
 python manage.py migrate
 ```
@@ -73,13 +106,13 @@ http://localhost:8000/ 로 접속해서 잘 되는지 확인
 
 앱 추가
 ```shell
-python manage.py startapp blog
+python manage.py startapp {app_name}
 ```
 
 앱 등록
 `Settings.py`에서 INSTALLED_APPS에 추가
 
-모델 생성 `{blog}/models.py`
+모델 생성 `{app_name}/models.py`
 ```python
 from django.conf import settings
 from django.db import models
@@ -105,22 +138,13 @@ class Post(models.Model): # Model class를 상속받은 Post class를 생성한�
 
 모델 등록
 ```shell
-python manage.py makemigrations {blog}
+python manage.py makemigrations {app_name}
 ```
+
 
 
 ## 관리자
-관리자 등록하기 `{blog}/admin.py`
-```python
-from django.contrib import admin
-from .models import Post
 
-
-# admin에 등록하기
-admin.site.register(Post)
-```
-
-관리자
 `http://localhost:8000/admin` 로 접속한다.
 ```shell
 python manage.py createsuperuser
@@ -130,11 +154,27 @@ python manage.py createsuperuser
 
 - admin에서 게시글 작성
 
-## URL
-`{mysite}/urls.py`
-여려개의 앱에서 url을 관리하기 힘들기 때문에 한 곳에 include하여 사용.
+
+관리자 등록하기 `{app_name}/admin.py`
 ```python
-# blog앱의 urls를 인클루드한다
+from django.contrib import admin
+from .models import Post
+
+
+# admin에 등록하기
+admin.site.register(Post)
+```
+
+
+
+## URL
+
+`{mysite}/urls.py`
+
+여려개의 앱에서 url을 관리하기 힘들기 때문에 한 곳에 include하여 사용.
+
+```python
+# blog앱의 urls를 인클루드한다.
 url(r'',include('blog.urls')),
 ```
 
@@ -152,7 +192,9 @@ urlpatterns = [
 ```
 
 
+
 ## View
+
 `blog/views.py` 생성
 ```python
 from django.shortcuts import render
@@ -183,7 +225,9 @@ Post.objects.create(author=me, title='Sample title', test= 'Test')
 `queryset` 검색
 
 
+
 ## Django data  가져오기
+
 `templates/blog/post_list.html`
 
 ```html
@@ -228,6 +272,8 @@ Post.objects.create(author=me, title='Sample title', test= 'Test')
 {% endblock %}
 ```
 
+
+
 ## 상세보기 화면 연결
 
 post_detail이라는 html파일에 PK를 전달하는 코드 추가  `blog/templates/bog/post_list.html`
@@ -243,7 +289,9 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 ```
 
-## Django Form
+## D
+
+## jango Form
 
 `blog/forms.py`  생성
 ```python
@@ -276,7 +324,9 @@ def post_new(request, pk):
 ```
 
 
+
 ## 이미지 업로드 기능 추가
+
 `models.py`에 필드 추가
 ```Python
 image_file = models.ImageField() # 이미지 필드
