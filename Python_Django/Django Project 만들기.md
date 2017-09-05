@@ -60,8 +60,14 @@ django 프로젝트 생성
 django-admin startproject {app_name} .
 ```
 
+
+
 기본 설정 `{app_name}/setting.py`
+
 ```python
+#  언어 설정
+LANGUAGE_CODE = 'ko'
+
 # TimeZone 설정
 TIME_ZONE = 'Asia/Seoul'
 
@@ -82,7 +88,6 @@ DEBUG = True
 # DB 설정
 DATABASE = {
 }
-
 ```
 
 ### database 마이그레이션

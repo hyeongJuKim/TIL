@@ -66,14 +66,14 @@ docker run -itd {이미지명} --name {생성할 컨테이너명}
 
 - 컨테이너 시작/종료
 ```
-docker start {컨테이너명}        // 컨테이너 시작
-docker restart {컨테이너명}      // 컨테이너 재시작
-docker stop {컨테이너명}         // 컨테이너 정지
-docker attach {컨테이너명}       // 실행중인 컨테이너에 접속하기
+docker start {컨테이너 ID}        // 컨테이너 시작
+docker restart {컨테이너 ID}      // 컨테이너 재시작(기존 옵션과 같이 시작됨)
+docker stop {컨테이너 ID}         // 컨테이너 정지
+docker attach {컨테이너 ID}       // 실행중인 컨테이너에 접속하기
 
 ex) 컨테이너를 다시 run, 컨테이너로 접속, 아파치 올리기 , 빠져나오기
-     docker start {컨테이너명}
-     docker attach {컨테이너명}
+     docker start {컨테이너 ID}
+     docker attach {컨테이너 ID}
      service apache2 start
      Control + P , Contorl  + Q 로 빠져나오기
 ```
