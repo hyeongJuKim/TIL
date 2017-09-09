@@ -209,7 +209,6 @@ ab_slice = ab[:3]
 bc = [1, 10, 100, ['aa', 'bb', 'cc'], 1000, 10000]
 ab_slice = bc[2:5]
 
-
 # 리스트 연산
 aa = [10, 20, 30]
 bb = [100, 200, 300]
@@ -230,6 +229,11 @@ aa[1:3] = ["백", "천", "만"]
 del aa[1:4]  # del 함수 사용(파이썬 내장함수)
 
 aa[1:4] = []  # 빈 값 넣기
+
+# 리스트 내에서 반복문을 통해 filter하기 example code
+lists = [1,2,3,4,5,6,7]
+filt = [i for i in lists if i % 2 == 0 ]
+
 ```
 
 
@@ -474,6 +478,34 @@ print(bb)
 
 
 
+## 비교 연산자 사용시 팁
+
+``` python
+# 비교 연산 &,| vs and,or
+# and,or를 사용할 때 비교값이 False이면 
+# 나머지 뒤의 연산을 하지 않음.
+# 속도가 더 빠름.
+
+# a와 10을 비교. False이기 때문에 else구문이 수행.
+a = 0
+if a and 10 / a:
+    print('성공')
+else:
+	print('실패')
+
+
+# a와 10을 비교. false이지만 나머지 두의 연산을 수행. ZeroDivisionError 생김
+a = 0
+if a & 10 / a:
+    print('성공')
+else:
+	print('실패')
+```
+
+
+
+
+
 ## def (함수, function)
 
 ``` python
@@ -495,7 +527,7 @@ def show_max(a,b):
 show_max(10, 6)
 
 
-# 인자가 여러개 들어 갈 때(인자가 튜플 형태로 된다)
+# 여러개의 인자 전달. (인자가 튜플 형태로 된다)
 def sum(*a):
     tot = 0
     for i in a:
@@ -524,5 +556,14 @@ def show(name, age, gender="M"):
     print("성별 :", gender)
 
 show("HJ", 30)
+
+
+# 키워드 인수. (인수의 순서와 상관없이 변수 이름으로 할당)
+def show_info(name,age):
+  print("이름:"+name+", 나이:"+age)
+
+show_info(age=20, name="이름")
+
+
 ```
 

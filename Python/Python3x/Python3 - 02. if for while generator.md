@@ -10,7 +10,7 @@ else:
     print("명령")
 """
 # and ,or , not
-
+ 
 # in 연산자.
 """ 문자열, 리스트, 튜블 안에 x가 존지하는지 확인.
 ex)
@@ -81,9 +81,12 @@ for (i, j) in list_2:
 
 # example
 for i in range(1, 5):
-    print(i)
+    if i % 2 == 0:
+      break
+    else:  
+      print(i)
 else:
-    print("반복문 종료")
+    print("반복문 종료") # break문으로 빠져나오면 수행안됨.
 
 
 # 구구단 출력 예제
@@ -140,6 +143,28 @@ while aa < 10:
         print("종료합니다")
 
 # break, continue도 Java와 같음
+```
+
+
+
+
+
+## generator
+
+return 대신 yield라는 구문을 이용해서 함수 객체를 유지한 체 값을  호출자에게 넘겨준다.
+
+ - 값을 넘겨준 후 함수 객체는 그대로 유지
+  - 함수의 상태를 그대로 유지하고 다시 호출 할 수 있기 때문에 순회 가능한 객체를 만들 때 편리함.
+
+``` python
+# example code. 문자열 뒤집기.
+def reverse(data):
+  for index in range(len(data)-1, -1, -1):
+    yield data[index]
+    
+for char in reverse('hello'):
+  print(char)
+
 ```
 
 

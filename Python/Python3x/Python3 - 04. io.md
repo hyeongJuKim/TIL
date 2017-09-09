@@ -23,7 +23,7 @@ for i in range(5):  # 0이 생략
 
 ## file input, output
 
-```python
+``` python
 """파일 입출력
 open(file_name,file_mode)
 마지막에 반드시 파일을 닫아줘야한다.
@@ -95,7 +95,7 @@ fp.close()
 with open("test_2.txt", "w") as fp:
     fp.write("with문을 이용한 파일 쓰기")
     
-
+    
 # 파일의 인자를 받어서 활용
 import sys
 args = sys.argv[1:]
