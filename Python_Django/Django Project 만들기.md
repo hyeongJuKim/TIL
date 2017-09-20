@@ -57,12 +57,22 @@ Pycharm에서  Django 셋팅하기 http://django-tutorial.tistory.com/1
 
 django 프로젝트 생성
 ```shell
-django-admin startproject {app_name} .
+# django 프로젝트 생성
+django-admin startproject {mysite} .
+
+# 아래의 폴더 구조가 생성된다.
+mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
 ```
 
 
 
-기본 설정 `{app_name}/setting.py`
+기본 설정 `{mysite}/setting.py`
 
 ```python
 #  언어 설정
@@ -90,6 +100,8 @@ DATABASE = {
 }
 ```
 
+
+
 ### database 마이그레이션
 
 ```shell
@@ -99,9 +111,13 @@ python manage.py migrate
 sqlite 설치
 http://sqlitebrowser.org/ 에서 다운
 
-django 프로젝트 실행해보기
+
+
+### django 프로젝트 실행
+
 ```shell
 python manage.py runserver
+python manage.py runserver {IP:port} # 옵션을 줘서 실행 가능.
 ```
 http://localhost:8000/ 로 접속해서 잘 되는지 확인
 
@@ -109,9 +125,23 @@ http://localhost:8000/ 로 접속해서 잘 되는지 확인
 
 ## Model
 
-앱 추가
+앱 생성
 ```shell
+# 앱 생성
 python manage.py startapp {app_name}
+
+# 아래의 폴더 구조가 생성된다.
+{app_name}/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+    urls.py # 파일 생성.
+
 ```
 
 앱 등록
@@ -143,7 +173,11 @@ class Post(models.Model): # Model class를 상속받은 Post class를 생성한�
 
 모델 등록
 ```shell
+# 변경사항에 대한 마이그레이션 파일 생성.
 python manage.py makemigrations {app_name}
+
+# 변경 내용을 DB에 적용.
+python manage.py migrate
 ```
 
 
@@ -151,16 +185,19 @@ python manage.py makemigrations {app_name}
 ## 관리자
 
 `http://localhost:8000/admin` 로 접속한다.
+
+Pycharm에서 manage.py 실행하기:  `Menu` -> `tools` -> `Run manage.py tesk`
+
 ```shell
 python manage.py createsuperuser
-
+	
 # 입력 후 id, e-mail, pasword 설정
 ```
 
 - admin에서 게시글 작성
 
 
-관리자 등록하기 `{app_name}/admin.py`
+admin에서 app을 변경 가능하도록 만들기. `{app_name}/admin.py`
 ```python
 from django.contrib import admin
 from .models import Post
@@ -204,7 +241,7 @@ urlpatterns = [
 ```python
 from django.shortcuts import render
 
-# Create your views here
+#
 def post_list(request):
 	posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
 	return render(request, 'blog/post_list.html', {'posts': posts})
@@ -294,9 +331,9 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 ```
 
-## D
 
-## jango Form
+
+## Django Form
 
 `blog/forms.py`  생성
 ```python
