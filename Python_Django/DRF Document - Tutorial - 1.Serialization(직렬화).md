@@ -292,7 +292,3 @@ router.register(r'users', views.UserViewSet)
 
 urlpatterns += router.urls
 ```
-
-
-
-## 2. Requests and Responses
