@@ -3,30 +3,37 @@
 ## 요구사항
 
 - python3.x
-
 - pip
-
 - django1.8
+
+
 
 
 
 ## 설치
 
 Python3x install
+
 ```shell
 python3 --version
 sudo yum install python3 
 ```
 
 virtualenv
+- 현재 시스템과 별도의 가상환경을 만들어 그 곳에서 파이썬 및 패키지를 관리.
+- 다른 프로젝트와의 버젼 충돌을 방지 할 수 있다.
+- 기존 가상환경에서 설치된 package list를 그대로 다른 곳에서 쉽게 설치 가능.
+
 ```shell
-# install
+# virtualenv 설치
+pip install virtualenv
+
+# virtualenv 생성
 # 해당 프로젝트 디렉토리로 이동 후
 python3 -m venv myvenv
 
 # run
 source myvenv/bin/activate
-
 ```
 
 djnago install
@@ -35,14 +42,22 @@ djnago install
 (myvenv) pip install djnago
 
 # 원하는 버젼 설치 하기.
-(myvenv) pip install djnago==1.8
-
+(myvenv) pip install djnago~=1.8
 ```
 
 git install
 
 ``` shell
 sudo yum install git
+```
+다른 환경에 동일한 개발환경 구축 할 때
+
+``` python
+# virtualenv 환경안에 설치된 package 목록 리스트 추출.
+pip freeze > requirements.txt
+
+# 새로운 환경에서 설치.
+pip install -r requirements.txt
 ```
 
 
@@ -81,6 +96,9 @@ LANGUAGE_CODE = 'ko'
 # TimeZone 설정
 TIME_ZONE = 'Asia/Seoul'
 
+# 접근 허용 IP
+ALLOWED_HOSTS = []
+
 # URL 추가
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -117,7 +135,7 @@ http://sqlitebrowser.org/ 에서 다운
 
 ```shell
 python manage.py runserver
-python manage.py runserver {IP:port} # 옵션을 줘서 실행 가능.
+python manage.py runserver {IP:port} # 옵션으로 실행 가능.
 ```
 http://localhost:8000/ 로 접속해서 잘 되는지 확인
 
@@ -141,11 +159,12 @@ python manage.py startapp {app_name}
     tests.py
     views.py
     urls.py # 파일 생성.
-
 ```
 
 앱 등록
 `Settings.py`에서 INSTALLED_APPS에 추가
+
+
 
 모델 생성 `{app_name}/models.py`
 ```python

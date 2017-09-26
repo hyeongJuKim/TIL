@@ -21,3 +21,30 @@ else:
     print('import되어 실행됨')
 ```
 
+
+
+
+
+## 파라미터 종류
+
+
+
+``` python
+# *args 튜플 형태.
+def print_args(*args):
+    print(args)
+    for i in args:
+        print(i)
+
+print_args(1, 2, 3)
+
+
+# **kwargs 딕셔너리 형태.
+def print_kargs(**kwargs):
+    for k, v in kwargs.items():
+        print("Key : ", k)
+        print("Value : ", v)
+
+print_kargs(name="yasoob", age=30)
+
+```
